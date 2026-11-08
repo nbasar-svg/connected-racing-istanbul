@@ -25,7 +25,7 @@
         ['Bir turun arkasındaki bağlantı.','Sürücüler Contact, araçlar Vehicle kayıtlarıyla temsil edilir. Yarış deneyimini kişi ve varlık bilgileriyle birlikte ele al.','İLİŞKİLENDİR'],
         ['Doğru ekip, aynı pit alanında.','Servis vakasında Begin Swarming, Slack’te ekibi bir araya getirir. Vaka bağlantısı ve onarım desteği ortak bir çalışma alanına taşınır.','BİRLİKTE ÇÖZ'],
         ['Bakım da deneyimin bir parçası.','WhatsApp üzerinden bakım randevusu planlanır; iş, Field Service Mobile’da teknisyene ulaşır. AI görsel bulguları teknisyen değerlendirmesini destekler.','SERVİSE BAĞLA'],
-        ['Yarış deneyimi cebine taşınır.','Sürücülerin kendi yarış deneyimlerine ulaşabileceği portal üzerinde çalışılıyor. Nihai kapsam ve kişisel sonuç deneyimi henüz doğrulanmadı.','DENEYİMİ GENİŞLET']
+        ['Yarış deneyimi cebine taşınır.','Sürücü portalı; yarış deneyimini, tur sonuçlarını ve kişisel performansını tek bir yerde bir araya getirir. Pistten ayrıldıktan sonra da deneyimi keşfetmeye devam et.','DENEYİMİ GENİŞLET']
       ],
       values:[
         ['Verileri bağla.','Pistte: sürücü, araç ve tur. İşinizde: müşterinizin kullandığı ürünle olan ilişkisini anlamak.','DATA 360 · PLATFORM'],
@@ -56,7 +56,7 @@
         ['The connections behind a lap.','Drivers are represented by Contact records, cars by Vehicle records. Connect the race experience to people and assets.','CONNECT'],
         ['The right team, in the same pit.','Begin Swarming on a service case brings the team together in Slack. The case link and repair support move into a shared workspace.','SOLVE TOGETHER'],
         ['Maintenance is part of the experience.','A maintenance appointment is arranged through WhatsApp and reaches the technician in Field Service Mobile. AI image findings support technician assessment.','CONNECT SERVICE'],
-        ['The race experience goes with you.','A driver-facing portal is in development. Its final scope and personalized results experience have not yet been verified.','EXTEND THE EXPERIENCE']
+        ['The race experience goes with you.','The driver portal brings your race experience, lap results and personal performance together in one place. Keep exploring your experience beyond the track.','EXTEND THE EXPERIENCE']
       ],
       values:[
         ['Connect data.','On track: driver, car and lap. In your business: understanding the relationship between a customer and the product they use.','DATA 360 · PLATFORM'],
@@ -161,7 +161,7 @@
     if(index===3) body=`<div class="visual-label">SALESFORCE PLATFORM</div>${nodes(v.platform)}`;
     if(index===4) body=`<div class="visual-label">SERVICE CLOUD + SLACK</div>${nodes(v.service)}`;
     if(index===5) body=`<div class="visual-label">FIELD SERVICE</div>${nodes(v.field)}`;
-    if(index===6) body=`<div class="visual-label">${v.portal}</div><div class="visual-icon" aria-hidden="true">◎</div><div class="visual-row"><span class="line-block"></span></div><div class="visual-row"><span class="line-block dim"></span></div><span class="progress-label">${t('development')}</span>`;
+    if(index===6) body=`<div class="visual-label">${v.portal}</div><div class="visual-icon" aria-hidden="true">◎</div><div class="visual-row"><span class="line-block"></span></div><div class="visual-row"><span class="line-block dim"></span></div>`;
     return `<div class="visual-inner">${body}</div>`;
   }
   function renderClouds(){
@@ -169,7 +169,7 @@
     const content=t('clouds')[cloud];
     const panel=$('#cloud-panel');
     panel.setAttribute('aria-labelledby',`cloud-tab-${cloud}`);
-    panel.innerHTML=`<div class="cloud-copy"><span class="product-kicker">${content[2]}</span><h3>${escape(content[0])}</h3><p>${escape(content[1])}</p>${cloud===6?`<span class="progress-label">${t('development')}</span>`:''}</div><div class="product-visual">${visualFor(cloud)}</div>`;
+    panel.innerHTML=`<div class="cloud-copy"><span class="product-kicker">${content[2]}</span><h3>${escape(content[0])}</h3><p>${escape(content[1])}</p></div><div class="product-visual">${visualFor(cloud)}</div>`;
   }
   function renderGarage(){
     const c=cars[car];
