@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#080e17">
+  <meta name="description" content="Innovation Day Istanbul: a real Carrera racing circuit connected to the Salesforce ecosystem.">
+  <title>Connected Racing — Innovation Day Istanbul</title>
+  <link rel="icon" href="assets/lg_sf.webp">
+  <link rel="stylesheet" href="styles.css">
+  <script src="piper-integration.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main" data-i18n="skip">Skip to content</a>
+  <header class="header">
+    <button class="brand" data-go="home" aria-label="Connected Racing — Home">
+      <img src="assets/lg_sf.webp" alt="Salesforce" width="68" height="44">
+      <span class="brand-rule"></span>
+      <span class="brand-copy">INNOVATION DAY<span>ISTANBUL <span class="red-dot">●</span></span></span>
+    </button>
+
+    <div class="header-tools">
+      <span class="event-label">CONNECTED RACING</span>
+      <div class="languages" aria-label="Language"><button data-lang="tr" aria-pressed="false">TR</button><button data-lang="en" aria-pressed="true">EN</button></div>
+      <button class="icon-button" id="fullscreen" data-i18n-title="fullscreen" title="Full screen" aria-label="Full screen"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 3H3v5m13-5h5v5M3 16v5h5m13-5v5h-5"/></svg></button>
+    </div>
+  </header>
+
+  <div class="shell">
+    <nav class="side-nav" aria-label="Demo">
+      <button data-go="home" class="nav-item active" aria-current="page"><span class="nav-number">01</span><span data-i18n="navHome">Start</span></button>
+      <button data-go="journey" class="nav-item"><span class="nav-number">02</span><span data-i18n="navJourney">One lap</span></button>
+      <button data-go="clouds" class="nav-item"><span class="nav-number">03</span><span data-i18n="navClouds">Experiences</span></button>
+      <button data-go="garage" class="nav-item"><span class="nav-number">04</span><span data-i18n="navGarage">Garage</span></button>
+      <button data-go="value" class="nav-item"><span class="nav-number">05</span><span data-i18n="navValue">Business value</span></button>
+      <div class="nav-bottom"><span class="vertical-line"></span><span>FROM TRACK<br>TO IMPACT.</span></div>
+    </nav>
+
+
+    <main id="main" tabindex="-1">
+      <section id="home" class="view home-view" aria-labelledby="home-title">
+        <div class="hero-copy">
+          <div class="eyebrow"><span class="dash"></span>CONNECTED RACING / ISTANBUL</div>
+          <h1 id="home-title">One Lap.<br><span>Every Cloud.</span></h1>
+          <p class="hero-lead" data-i18n="heroLead">A real track.<br>An experience without limits.</p>
+          <p class="hero-description" data-i18n="heroDescription">Take a lap. Discover how data becomes insight and action across the Salesforce ecosystem.</p>
+          <div class="hero-actions"><button class="button primary" data-go="journey"><span data-i18n="exploreJourney">Follow a Lap</span><span aria-hidden="true">↗</span></button><button class="text-button" data-go="clouds"><span data-i18n="cloudExperiences">Salesforce Experiences</span><span aria-hidden="true">→</span></button></div>
+          <button class="hero-piper" data-piper><span class="piper-mark">✦</span><span><b data-i18n="curious">Something you’re curious about?</b><span data-i18n="talkPiper">Talk to Piper</span></span><span aria-hidden="true">↗</span></button>
+        </div>
+        <div class="hero-scene">
+          <div class="scene-topline"><span class="tiny-label" data-i18n="physicalDigital">FROM PHYSICAL TO DIGITAL</span><span class="scene-tag" data-i18n="illustration">Illustrative view</span></div>
+          <div class="cloud-orbit">
+            <svg class="orbit-lines" viewBox="0 0 600 250" aria-hidden="true"><path d="M300 215V130Q300 80 180 80H90M300 215V80H500M300 215V35H300"/><path class="flow-line" d="M300 215V130Q300 80 180 80H90M300 215V80H500M300 215V35H300"/></svg>
+            <button class="orbit-item orbit-one" data-cloud="1"><img src="assets/lg_tab.webp" alt=""><span>Tableau</span></button>
+            <button class="orbit-item orbit-two" data-cloud="2"><img src="assets/lg_ag.webp" alt=""><span>Agentforce</span></button>
+            <button class="orbit-item orbit-three" data-cloud="4"><img src="assets/lg_svc.webp" alt=""><span>Service + Slack</span></button>
+            <button class="data-hub" data-cloud="0"><span class="hub-ring"></span><img src="assets/lg_d360.webp" alt=""><strong>Data 360</strong><span data-i18n="connectedData">CONNECTED DATA</span></button>
+          </div>
+          <div class="track-stage"><div class="track-glow"></div><img class="track-image" src="assets/trk.webp" alt="Carrera Race to Victory figure-eight circuit with a crossover"><div class="track-caption"><span class="caption-line"></span><span>CARRERA DIGITAL 132</span><span class="track-arrow" aria-hidden="true">↗</span></div></div>
+          <div class="scene-foot"><span><b>05</b> <span data-i18n="cars">CARS</span></span><span><b>02</b> <span data-i18n="lanes">LANES</span></span><span><b>01</b> <span data-i18n="connectedExperience">CONNECTED EXPERIENCE</span></span></div>
+        </div>
+      </section>
+
+      <section id="journey" class="view" hidden aria-labelledby="journey-title">
+        <div class="section-heading"><div><div class="eyebrow" data-i18n="journeyEyebrow">02 / THE JOURNEY OF A LAP</div><h2 id="journey-title" data-i18n="journeyTitle">The finish line is just the start.</h2><p data-i18n="journeyIntro">One lap. Five steps from a physical experience to digital action.</p></div><span class="scene-tag" data-i18n="illustrativeFlow">Illustrative animation</span></div>
+        <div class="journey-steps" id="journey-steps" aria-label="Journey"></div>
+        <div class="journey-detail"><div class="journey-art" id="journey-art"></div><div class="journey-copy"><span class="eyebrow" id="step-counter"></span><h3 id="step-title"></h3><p id="step-description" aria-live="polite"></p><div class="step-tags" id="step-tags"></div></div></div>
+        <div class="journey-controls"><div><button class="button primary" id="play-journey"><span aria-hidden="true">▶</span><span data-i18n="playJourney">Play the Journey</span></button><button class="button quiet" id="restart-journey"><span aria-hidden="true">↺</span><span data-i18n="restart">Restart</span></button></div><p data-i18n="journeyNote">An explanation of the data journey, not live lap tracking.</p></div>
+      </section>
+
+      <section id="clouds" class="view" hidden aria-labelledby="clouds-title">
+        <div class="section-heading"><div><div class="eyebrow" data-i18n="cloudsEyebrow">03 / SALESFORCE EXPERIENCES</div><h2 id="clouds-title" data-i18n="cloudsTitle">Same lap. New possibilities.</h2><p data-i18n="cloudsIntro">Choose an experience. See how track data connects to business value.</p></div></div>
+        <div class="cloud-layout"><div class="cloud-tabs" id="cloud-tabs" role="tablist" aria-label="Salesforce" aria-orientation="vertical"></div><div class="cloud-panel" id="cloud-panel" role="tabpanel" tabindex="0"></div></div>
+      </section>
+
+      <section id="garage" class="view" hidden aria-labelledby="garage-title">
+        <div class="section-heading"><div><div class="eyebrow" data-i18n="garageEyebrow">04 / THE ISTANBUL GARAGE</div><h2 id="garage-title" data-i18n="garageTitle">Five characters. Two lanes.</h2><p data-i18n="garageIntro">Explore the real Carrera cars. Two race on the physical track at a time.</p></div><span class="scene-tag">CARRERA · 1:32</span></div>
+        <div class="garage-layout"><div class="featured-car" id="featured-car"></div><div class="car-list" id="car-list" aria-label="Cars"></div></div>
+        <p class="small-note" data-i18n="garageNote">This selection explores the cars; it does not control the physical track.</p>
+      </section>
+
+      <section id="value" class="view" hidden aria-labelledby="value-title">
+        <div class="section-heading"><div><div class="eyebrow" data-i18n="valueEyebrow">05 / BEYOND THE TRACK</div><h2 id="value-title" data-i18n="valueTitle">What comes next for your business?</h2><p data-i18n="valueIntro">Here, it’s a racing car. In your world, it’s a customer, a product, a service experience.</p></div></div>
+        <div class="value-grid" id="value-grid"></div><div class="value-cta"><div><span class="eyebrow">QUALIFIED PIPER</span><h3 data-i18n="valueCta">Let’s explore the possibilities.</h3><p data-i18n="valueCtaText">Ask about the demo. Explore use cases. Take the conversation further.</p></div><button class="button primary" data-piper><span class="spark">✦</span><span data-i18n="talkPiper">Talk to Piper</span><span aria-hidden="true">↗</span></button></div>
+      </section>
+    </main>
+  </div>
+  <footer class="footer"><div><span class="finish-flag" aria-hidden="true"></span><span>SALESFORCE INNOVATION DAY <span class="footer-location">/ ISTANBUL</span></span></div><div class="footer-controls"><button class="text-button" id="motion-toggle" aria-pressed="false"><span aria-hidden="true">Ⅱ</span><span data-i18n="pauseMotion">Pause Animation</span></button><button class="text-button" id="reset"><span aria-hidden="true">↺</span><span data-i18n="backHome">Back to Start</span></button></div></footer>
+  <div id="notification" class="notification" role="status" hidden><span id="notification-text"></span><button id="close-notification" aria-label="Close">×</button></div>
+</body>
+</html>
