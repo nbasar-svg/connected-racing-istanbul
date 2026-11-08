@@ -177,8 +177,14 @@
     $('#featured-car').innerHTML=`<span class="car-big-number" aria-hidden="true">0${car+1}</span><div class="car-large-image"><img class="${c.topdown?'topdown':c.photo?'photo':''}" src="assets/${c.image}" alt="${escape(c.brand+' '+c.name+' '+c.detail)}"></div><div class="car-feature-copy"><div><span class="eyebrow" style="color:${c.color}">${c.brand.toUpperCase()}</span><h3>${c.name}</h3><p>${escape(c.detail)}</p></div><span class="car-scale">1:32</span></div>`;
     $('#car-list').innerHTML=cars.map((c,i)=>`<button class="car-choice" data-car="${i}" style="--car-color:${c.color}" aria-pressed="${i===car}"><span>0${i+1}</span><img src="assets/${c.image}" alt=""><span class="car-small-copy"><b>${c.brand} ${c.name}</b><small>${escape(c.detail)}</small></span><span aria-hidden="true">${i===car?'↗':'+'}</span></button>`).join('');
   }
+  const valueLogos = [
+    [['lg_d360.webp', 'Data 360'], ['lg_sf.webp', 'Salesforce Platform']],
+    [['lg_tab.webp', 'Tableau']],
+    [['lg_ag.webp', 'Agentforce']],
+    [['lg_svc.webp', 'Service'], ['lg_slk.webp', 'Slack'], ['lg_fs.webp', 'Field Service']]
+  ];
   function renderValues(){
-    $('#value-grid').innerHTML=t('values').map((v,i)=>`<article class="value-card"><span class="value-number">0${i+1} /</span><h3>${escape(v[0])}</h3><p>${escape(v[1])}</p><div class="value-product">${escape(v[2])}</div></article>`).join('');
+    $('#value-grid').innerHTML=t('values').map((v,i)=>`<article class="value-card"><span class="value-number">0${i+1} /</span><h3>${escape(v[0])}</h3><p>${escape(v[1])}</p><div class="value-product">${valueLogos[i].map(([file,name])=>`<img src="assets/${file}" alt="${name}" title="${name}" width="44" height="36">`).join('')}</div></article>`).join('');
   }
   function notify(message,delay=6500){
     clearTimeout(notificationTimer);$('#notification-text').textContent=message;$('#notification').hidden=false;
@@ -198,8 +204,6 @@
   }
   function updateMotion(){
     document.body.classList.toggle('motion-paused',motionPaused);
-    $('#motion-toggle').setAttribute('aria-pressed',String(motionPaused));
-    $('#motion-toggle').innerHTML=`<span aria-hidden="true">${motionPaused?'▶':'Ⅱ'}</span><span>${t(motionPaused?'resumeMotion':'pauseMotion')}</span>`;
   }
   function updateFullscreen(){
     const label=t(document.fullscreenElement?'exitFullscreen':'fullscreen');
@@ -224,8 +228,6 @@
   });
   $('#play-journey').addEventListener('click',toggleJourney);
   $('#restart-journey').addEventListener('click',()=>{stopJourney();step=0;renderJourney();});
-  $('#reset').addEventListener('click',()=>{stopJourney();step=cloud=car=0;renderJourney();renderClouds();renderGarage();$('#notification').hidden=true;go('home');});
-  $('#motion-toggle').addEventListener('click',()=>{motionPaused=!motionPaused;updateMotion();});
   $('#close-notification').addEventListener('click',()=>{$('#notification').hidden=true;});
   $('#fullscreen').addEventListener('click',async()=>{
     try{if(document.fullscreenElement) await document.exitFullscreen();else if(document.documentElement.requestFullscreen) await document.documentElement.requestFullscreen();else notify(t('fullscreenFailed'));}catch{notify(t('fullscreenFailed'));}

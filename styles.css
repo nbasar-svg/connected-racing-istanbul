@@ -41,3 +41,6 @@
  .car-large-image{height:220px}
  .car-choice{min-height:62px;padding-top:8px;padding-bottom:8px}
 }
+
+/* Product marks in the business-value cards. */
+.value-card .value-product{display:flex;align-items:center;gap:16px;min-height:40px}.value-product img{width:44px;height:36px;object-fit:contain;flex-shrink:0}
